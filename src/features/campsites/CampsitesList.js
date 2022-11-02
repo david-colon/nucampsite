@@ -3,7 +3,7 @@ import CampsiteCard from "./CampsiteCard";
 import { selectAllCampsites } from "./campsitesSlice";
 
 
-const CampsiteList = () => {
+const CampsitesList = () => {
     const campsites = selectAllCampsites();
     
     return (
@@ -20,4 +20,4 @@ const CampsiteList = () => {
     );
 }
 
-export default CampsiteList;
+export default CampsitesList;
