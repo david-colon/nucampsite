@@ -20,13 +20,13 @@ const Header = () => {
                         <NavLink className='nav-link' to='/'><i className="fa fa-home fa-lg" /> Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='directory'><i className="fa fa-home fa-lg" /> Directory</NavLink>
+                        <NavLink className='nav-link' to='directory'><i className="fa fa-compass fa-lg" /> Directory</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='about'><i className="fa fa-home fa-lg" /> About</NavLink>
+                        <NavLink className='nav-link' to='about'><i className="fa fa-address-card fa-lg" /> About</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='contact'><i className="fa fa-home fa-lg" /> Contact</NavLink>
+                        <NavLink className='nav-link' to='contact'><i className="fa fa-comments fa-lg" /> Contact</NavLink>
                     </NavItem >
                 </Nav >
             </Collapse>
