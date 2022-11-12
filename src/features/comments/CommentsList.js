@@ -1,6 +1,7 @@
 import { Col } from "reactstrap";
 import Comment from "./Comment";
 import { selectCommentsByCampsiteId } from "./commentsSlice";
+import CommentForm from "./CommentForm";
 
 const CommentsList = ({ campsiteId }) => {
     const comments = selectCommentsByCampsiteId(campsiteId); // get only comments for the specific ID passed by CampsiteDetailPage
@@ -14,6 +15,7 @@ const CommentsList = ({ campsiteId }) => {
                         return <Comment key={comment.id} comment={comment} />;
                     })
                 }
+                <CommentForm campsiteId={campsiteId} />
             </Col>
         );
     }
