@@ -9,7 +9,11 @@ import { useSelector } from 'react-redux'
 const DisplayList = () => {
 
     const items = useSelector((state) =>
-        [selectFeaturedCampsite(state), selectFeaturedPromotion(state), selectFeaturedPartner(state)]
+        [
+            selectFeaturedCampsite(state),
+            selectFeaturedPromotion(state),
+            selectFeaturedPartner(state)
+        ]
     );
     console.log('display items:', items)
 
