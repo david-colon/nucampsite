@@ -14,6 +14,8 @@ const campsitesSlice = createSlice(
 
 export const campsitesReducer = campsitesSlice.reducer;
 
+
+// selector functions below -- they are selector functions bc they are accessing Redux's state
 export const selectAllCampsites = (state) => {
     return state.campsites.campsitesArray;
 };

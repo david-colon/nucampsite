@@ -2,6 +2,7 @@ import { Navbar, NavbarBrand, Container, Row, Col, Collapse, NavbarToggler, Nav,
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import NucampLogo from '../app/assets/img/logo.png'
+import UserLoginForm from "../features/user/UserLoginForm";
 
 const Header = () => {
 
@@ -29,6 +30,7 @@ const Header = () => {
                         <NavLink className='nav-link' to='contact'><i className="fa fa-comments fa-lg" /> Contact</NavLink>
                     </NavItem >
                 </Nav >
+                <UserLoginForm />
             </Collapse>
         </Navbar >
     )
