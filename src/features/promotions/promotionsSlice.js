@@ -6,7 +6,7 @@ import mapImageURL from '../../utils/mapImageURL';
 export const fetchPromotions = createAsyncThunk(
     'promotions/fetchPromotions',
     async () => {
-        const response = await fetch (baseUrl + 'promotions');
+        const response = await fetch(baseUrl + 'promotions');
         if (!response.ok) {
             return Promise.reject('Unable to fetch, status: ' + response.status);
         }
@@ -31,12 +31,12 @@ const promotionsSlice = createSlice(
                 state.isLoading = true;
             },
             [fetchPromotions.fulfilled]: (state, action) => {
-                state.isLoading = true;
+                state.isLoading = false;
                 state.errMsg = '';
                 state.promotionsArray = mapImageURL(action.payload);
             },
             [fetchPromotions.rejected]: (state, action) => {
-                state.isLoading = true;
+                state.isLoading = false;
                 state.errMsg = action.error ? action.error.message : 'Fetch failed';
             }
         }
@@ -46,7 +46,11 @@ const promotionsSlice = createSlice(
 export const promotionsReducer = promotionsSlice.reducer;
 
 export const selectFeaturedPromotion = (state) => {
-    return (
-        state.promotions.promotionsArray.find((promotion) => promotion.featured)
-    );
+    return {
+        featuredItem: state.promotions.promotionsArray.find(
+            (promotion) => promotion.featured
+        ),
+        isLoading: state.promotions.isLoading,
+        errMsg: state.promotions.errMsg
+    };
 };
